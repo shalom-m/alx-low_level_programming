@@ -12,9 +12,10 @@ char *leet(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 10; j += 2)
+		{
+			if (s[i] == options[j] || s[i] == options[j] + 32)
+				s[i] = options[j + 1];
+		}
 	}
-	if (s[i] == options[j] || s[i] == options[j] + 32)
-		s[i] = options[j + 1];
-}
-return (s);
+	return (s);
 }
